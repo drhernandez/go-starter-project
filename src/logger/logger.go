@@ -22,11 +22,11 @@ type Tag struct {
 	Value any
 }
 
-func WithTags(values ...string) []Tag {
+func WithTags(values ...any) []Tag {
 	tags := make([]Tag, 0, len(values)/2)
 	i := 0
 	for i < len(values)-1 {
-		tags = append(tags, Tag{Name: values[i], Value: values[i+1]})
+		tags = append(tags, Tag{Name: values[i].(string), Value: values[i+1]})
 		i += 2
 	}
 

@@ -7,7 +7,7 @@ import (
 
 func mapUrls(router *echo.Echo, app *app) {
 	router.Any("/", func(c echo.Context) error {
-		logger.Info(c.Request().Context(), logger.WithTags("tag1", "value1", "tag2", "value2"), "este es un mensaje")
+		logger.Info(c.Request().Context(), logger.WithTags("tag1", "value1", "tag2", 2), "este es un mensaje")
 		return nil
 	})
 }
